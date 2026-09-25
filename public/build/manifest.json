@@ -1,0 +1,29 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CuCgXPaM.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Cw_0VaBg.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/review-editor.js"
+    ]
+  },
+  "resources/js/review-editor.js": {
+    "file": "assets/review-editor-DIsOC4BF.js",
+    "name": "review-editor",
+    "src": "resources/js/review-editor.js",
+    "isDynamicEntry": true,
+    "css": [
+      "assets/review-editor-Bf4bJ6eu.css"
+    ]
+  }
+}

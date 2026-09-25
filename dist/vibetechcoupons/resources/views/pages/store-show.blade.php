@@ -1,0 +1,11 @@
+@extends('layouts.app')
+@section('content')
+<section class="mx-auto max-w-7xl px-5 pt-10 lg:px-8">
+    <div class="grid gap-8 rounded-[2rem] bg-[#eef2ea] p-8 md:grid-cols-[auto_1fr] md:items-center md:p-10">
+        <div class="grid size-24 place-items-center rounded-3xl bg-white text-3xl font-black text-emerald-900 shadow-sm">@if($store->logo_url)<img src="{{ $store->logo_url }}" alt="{{ $store->name }}" loading="lazy" width="96" height="96" class="size-full rounded-[inherit] object-contain">@else{{ strtoupper(substr($store->name,0,2)) }}@endif</div>
+        <div><div class="eyebrow">STORE</div><h1 class="mt-2 text-4xl font-black tracking-tight">{{ $store->name }} coupons & deals</h1><p class="mt-3 max-w-3xl text-stone-600">{{ $store->description }}</p>@if($store->website_url)<a class="mt-4 inline-block text-sm font-black text-emerald-800" href="{{ $store->website_url }}" rel="nofollow sponsored" target="_blank">Visit official website ↗</a>@endif</div>
+    </div>
+</section>
+<section class="mx-auto max-w-7xl px-5 py-12 lg:px-8"><h2 class="section-title">Current offers</h2><div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">@foreach($coupons as $coupon)<livewire:coupon-card :coupon="$coupon" :key="'coupon-card-'.$coupon->id" />@endforeach</div><div class="mt-8">{{ $coupons->links() }}</div></section>
+@if($store->reviews->isNotEmpty())<section class="mx-auto max-w-7xl px-5 pb-10 lg:px-8"><h2 class="section-title">Latest {{ $store->name }} reviews</h2><div class="mt-6 grid gap-5 md:grid-cols-3">@foreach($store->reviews as $review)<a href="{{ route('reviews.show',$review) }}" class="soft-card p-5">@if($review->image_url)<img src="{{ $review->image_url }}" @if($review->image_srcset)srcset="{{ $review->image_srcset }}" sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" @endif alt="{{ $review->title }}" loading="lazy" width="640" height="360" class="mb-4 aspect-video w-full rounded-xl object-cover">@endif<div class="text-xs font-black uppercase tracking-wide text-emerald-700">{{ ucfirst($review->type) }}</div><h3 class="mt-2 text-xl font-black">{{ $review->title }}</h3><p class="mt-2 line-clamp-3 text-sm leading-6 text-stone-600">{{ $review->excerpt }}</p></a>@endforeach</div></section>@endif
+@endsection

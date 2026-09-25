@@ -1,0 +1,16 @@
+.review-article { min-width:0; overflow-wrap:anywhere; }
+.review-content { min-width:0; max-width:100%; white-space:normal; overflow-wrap:anywhere; word-break:normal; }
+.review-content :where(p,h2,h3,li,blockquote,figure,figcaption) { max-width:100%; white-space:normal; overflow-wrap:anywhere; }
+.review-content img { max-width:100%; height:auto; }
+.review-content pre { max-width:100%; white-space:pre-wrap; overflow-wrap:anywhere; overflow-x:auto; }
+.review-content .review-table-scroll { width:100%; max-width:100%; min-width:0; overflow-x:auto; }
+.review-content .review-table-scroll table { width:100%; table-layout:fixed; }
+.review-content th,.review-content td { overflow-wrap:anywhere; white-space:normal; }
+.review-offer { max-width:768px; margin:2rem auto; padding:1.5rem; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:20px; color:#064e3b; }
+.review-offer-copy { flex:1 1 230px; min-width:0; font-size:14px; line-height:1.7; }
+.review-offer-title { font-size:21px; font-weight:800; margin-bottom:.3rem; }
+.review-offer-button { display:inline-flex; align-items:center; justify-content:center; gap:.65rem; max-width:100%; padding:14px 24px; border-radius:12px; background:#065f46; color:#fff; font-weight:800; text-align:center; overflow-wrap:anywhere; }
+.review-offer-button:hover { background:#064e3b; }
+.review-offer-button:focus-visible { outline:3px solid #10b981; outline-offset:4px; }
+.review-offer-disclosure { flex-basis:100%; font-size:12px; line-height:1.6; color:#475569; }
+@media(max-width:480px) { .review-offer-button { width:100%; } }
